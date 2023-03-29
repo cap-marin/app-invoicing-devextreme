@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DxButtonModule, DxDataGridModule  } from 'devextreme-angular';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -11,7 +11,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     DxButtonModule,
-    DxDataGridModule
+    DxDataGridModule,
+    HttpClientModule
+
+    //desarrollador java angular, prepagada sura, poliza vida, poliza emergencias odontologicas, cursos idiomas, entrenamientos
   ],
   providers: [],
   bootstrap: [AppComponent]

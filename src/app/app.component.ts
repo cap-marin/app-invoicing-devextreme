@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Employee, EmployeesService } from './employees.service';
+import { EmployeesService } from './Services/employees.service';
+import {Employee} from './Interfaces/employees';
+import { Customers } from './Interfaces/customers';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,10 +13,16 @@ export class AppComponent {
   helloWorld() {
     alert('Hello world!');
   }
-
-  constructor(service: EmployeesService) {
-    this.employees = service.getEmployees();
+  
+  constructor(_service: EmployeesService) {
+    console.log("entra");
+    _service.getList().subscribe(res => {
+      
+      console.log("entra res", res)
+      this.employees = res;
+    });
   }
+
 }
 
 
