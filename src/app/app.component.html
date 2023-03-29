@@ -1,7 +1,7 @@
 <dx-button text="Click me" (onClick)="helloWorld()">
 </dx-button>
 
-<dx-data-grid [dataSource]="employees" keyExpr="EmployeeID" [allowColumnReordering]="true" [columnAutoWidth]="true">
+<dx-data-grid [dataSource]="employees" [allowColumnReordering]="true" [columnAutoWidth]="true">
   <dxo-paging [pageSize]="5" [pageIndex]="1">
     <!-- Shows the second page -->
   </dxo-paging>
@@ -17,16 +17,16 @@
     <dxi-item name="columnChooserButton"></dxi-item>
     <dxi-item name="searchPanel"></dxi-item>
   </dxo-toolbar>
-  <dxi-column dataField="FullName" [fixed]="true">
+  <dxi-column dataField="name_product" [fixed]="true">
     <dxi-validation-rule type="required"></dxi-validation-rule>
   </dxi-column>
-  <dxi-column dataField="Position">
+  <dxi-column dataField="description">
     <dxi-validation-rule type="required"></dxi-validation-rule>
   </dxi-column>
-  <dxi-column dataField="BirthDate" dataType="date" [width]="100">
+  <dxi-column dataField="unit_price" dataType="date" [width]="200">
     <dxi-validation-rule type="required"></dxi-validation-rule>
   </dxi-column>
-  <dxi-column dataField="HireDate" dataType="date" [width]="100">
+  <dxi-column dataField="stock" dataType="date" [width]="100">
     <dxi-validation-rule type="required"></dxi-validation-rule>
   </dxi-column>
   <dxi-column dataField="City"></dxi-column>
@@ -36,9 +36,9 @@
   <dxo-editing mode="popup" [allowUpdating]="true" [allowDeleting]="true" [allowAdding]="true">
   </dxo-editing>
 
-  <dxi-column dataField="Address"></dxi-column>
-  <dxi-column dataField="HomePhone"></dxi-column>
-  <dxi-column dataField="PostalCode" [visible]="true"></dxi-column>
+  <dxi-column dataField="Address" [visible]="false"></dxi-column>
+  <dxi-column dataField="HomePhone" [visible]="false"></dxi-column>
+  <dxi-column dataField="PostalCode" [visible]="false"></dxi-column>
 
   <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
   <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
